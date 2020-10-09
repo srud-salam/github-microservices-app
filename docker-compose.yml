@@ -1,0 +1,13 @@
+version: "3"
+services:
+  github-service:
+    build:
+      context: ./github-service
+      dockerfile: Dockerfile
+      args:
+        VARIANT: 12
+    volumes:
+      - .:/workspace:cached
+      - ./github-service:/opt/app
+    ports:
+      - 0.0.0.0:8080:8080
