@@ -1,8 +1,10 @@
+import { Repository } from "../../github/repo/repo.graphql.schema";
+
 export interface IRepositoryListProps {
   searchTerm: string;
 }
 
 export interface IRepositoryProps {
-  repo: any;
+  repo: Repository;
   key: string;
 }

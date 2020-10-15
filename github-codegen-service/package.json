@@ -28,7 +28,8 @@
     "lint": "tslint",
     "test:watch": "npm test -- --watch",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,6 +47,10 @@
     ]
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.17.10",
+    "@graphql-codegen/typescript": "^1.17.10",
+    "@graphql-codegen/typescript-operations": "^1.17.8",
+    "@graphql-codegen/typescript-react-apollo": "^2.0.7",
     "@testing-library/react-hooks": "^3.4.2",
     "@types/chai": "^4.2.13",
     "@types/chai-enzyme": "^0.6.8",

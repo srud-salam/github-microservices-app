@@ -19,8 +19,8 @@ const RepositoryComponent: React.FC<IRepositoryProps> = (
   } = props.repo;
 
   return (
-    <div className={styles.flexContainer} key={"container" + id}>
-      <div className={styles.flexRow} key={"row" + id}>
+    <div className={styles.flexContainer} key={"container_" + id}>
+      <div className={styles.flexRow} key={"row_" + id}>
         <a href={url} target="_blank" rel="noopener noreferrer">
           {name}
         </a>

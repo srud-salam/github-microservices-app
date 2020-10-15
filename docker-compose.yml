@@ -10,4 +10,4 @@ services:
       - .:/workspace:cached
       - ./github-service:/opt/app
     ports:
-      - 0.0.0.0:8080:8080
+      - 0.0.0.0:3000:3000

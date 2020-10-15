@@ -3,17 +3,17 @@ import { useDebounce } from "use-debounce";
 import { useQuery } from "@apollo/react-hooks";
 import { Typography, CircularProgress } from "@material-ui/core";
 
-import { SEARCH_FOR_REPOS } from "../../github/github.graphql.queries";
-import { IRepositoryListProps } from "./repository.props";
-import RepositoryComponent from "./repository.components";
 import useStyles from "./repository.styles";
+import RepositoryComponent from "./repository.components";
+import { IRepositoryListProps } from "./repository.props";
+import { SearchRepositoryDocument } from "../../github/repo/repo.graphql.schema";
 
 const RepositoryList: React.FC<IRepositoryListProps> = (
   props: IRepositoryListProps
 ) => {
   const styles = useStyles();
   const [debouncedSearchTerm] = useDebounce(props.searchTerm, 1000);
-  const { data, loading, error } = useQuery(SEARCH_FOR_REPOS, {
+  const { data, loading, error } = useQuery(SearchRepositoryDocument, {
     variables: { search_term: debouncedSearchTerm },
   });
 

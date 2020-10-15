@@ -3,9 +3,9 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import { Container, Typography } from "@material-ui/core";
 
 import useStyles from "./app.component.styles";
-import SearchBar from "../search/search.component";
+import Search from "../search/search.component";
 import RepositoryList from "../repository/repository.container";
-import client from "../../github/github.graphql.client";
+import client from "../../github/repo/repo.graphql.client";
 
 const App: React.FC = () => {
   const styles = useStyles();
@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <Typography variant={"h3"} className={styles.title}>
           GitHub GraphQL API
         </Typography>
-        <SearchBar value={searchTerm} onChange={setSearchTerm} />
+        <Search value={searchTerm} onChange={setSearchTerm} />
         <RepositoryList searchTerm={searchTerm} />
       </Container>
     </ApolloProvider>
